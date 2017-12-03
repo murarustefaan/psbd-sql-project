@@ -2,7 +2,10 @@
   "name": "psbd.tiiime",
   "version": "0.1",
   "description": "College project for PSBD (Oracle Databases)",
-  "main": "index.js",
+  "main": "server.js",
   "author": "Muraru Stefan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "oracledb": "^1.13.1"
+  }
 }
