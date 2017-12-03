@@ -1,0 +1,8 @@
+{
+  "name": "psbd.tiiime",
+  "version": "0.1",
+  "description": "College project for PSBD (Oracle Databases)",
+  "main": "index.js",
+  "author": "Muraru Stefan",
+  "license": "ISC"
+}
