@@ -1,1 +1,1 @@
-const oracle = require("oracledb");
+const oracle = require('oracledb');
