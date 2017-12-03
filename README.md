@@ -16,3 +16,6 @@ Obs. Depending on where the database is located (local or remote), it will be ne
   `set OCI_LIB_DIR=%cd%\instantclient\sdk\lib\msvc`
   `set OCI_INC_DIR=%cd%\instantclient\sdk\include`
   `npm install` (The previous steps are required to make sure the Oracle driver's installation succeeds)
+
+If the build fails with a error that contains `Could not find include file "stddef.h"`, you need to set the npm Visual Studio version by running
+  `npm config -g set msvs_version 2013`. Also, make sure that the Visual Studio 2013 installation is included in PATH.
