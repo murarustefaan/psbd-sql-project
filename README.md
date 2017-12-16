@@ -1,4 +1,4 @@
-#College project for Database Systems and Design#
+#College project for Database Systems and Design
 
 Requirements:
 - Python 2.7
