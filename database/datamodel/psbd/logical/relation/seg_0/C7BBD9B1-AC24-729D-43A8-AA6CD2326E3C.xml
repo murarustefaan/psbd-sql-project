@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="seasons show id FK" directorySegmentName="seg_0" id="C7BBD9B1-AC24-729D-43A8-AA6CD2326E3C">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>BE82C036-B9CF-A121-E725-9B0EBC327A6E</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<sourcePk>825EF50C-70DF-ACDB-3CE0-B4A8F1FCA546</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>59241FB0-3F52-1233-5564-52FDEF74A4ED</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1215C797-1BCF-EDCB-F849-6AD273B40B1B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

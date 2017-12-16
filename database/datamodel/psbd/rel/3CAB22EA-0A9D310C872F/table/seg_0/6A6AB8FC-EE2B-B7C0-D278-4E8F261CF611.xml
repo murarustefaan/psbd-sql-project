@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A6AB8FC-EE2B-B7C0-D278-4E8F261CF611" name="shows">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>36967341-57F7-88D5-04B3-B2650B810B1E</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A34738C2-0A0E-F566-480D-DAAAF670CD24">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>51CDBB98-41CC-B0CB-BC66-5758ED29452A</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="2FBC71ED-6558-401C-47C1-BF0CF38C082E">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>E069DDF7-71F1-D748-0AE9-F02B25057097</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="420D17BD-B8BB-A5EB-E556-49B073B44E16">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>C6B9FB81-BEBE-11AF-A152-9198C46925E7</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="image_url" id="DA08A75A-3AAE-7220-92C7-64AB61C7EB42">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>6B0529E2-18A3-005A-796D-CD33788D044E</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="episode_runtime" id="7A7318F1-74BB-21B8-EC1B-EB3A67B93DC8">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>77ACDBB3-A306-F5B8-502C-2505356DF81F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="base_id" id="A1395666-9A69-5545-8C29-11A32DD70108">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>D010D844-C781-E508-58D2-4CB428CC94DB</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E003547-5DBF-B149-2DDA-A5D38D93AA1A" referredColumn="28854D84-8FA6-551D-55DC-C6E913503FE3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5D46589F-6E8A-B7F7-60C6-E4CF2DF7BBD5" name="shows_id_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>502AAC74-8058-2A06-765C-946D581BDDE6</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A34738C2-0A0E-F566-480D-DAAAF670CD24"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE4420C1-9B4A-CAB1-A4BF-5908C8B83B3D" name="shows_base_id_FK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:49 UTC</createdTime>
+<generatorID>BB2F007C-531C-1269-ED18-64D0468CEAD9</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1395666-9A69-5545-8C29-11A32DD70108"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="shows_CK_1" directorySegmentName="seg_0" id="392D1576-D825-B60D-8272-FD841F5F12F9">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:06:49 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<rule>episode_runtime &gt; 5</rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

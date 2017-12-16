@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="74AC8585-A026-8A59-0EA3-7E9E51AB386F" name="genres">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>F33301A2-79CE-13A5-7040-0A537BCA6384</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="75BF183D-E4AD-B6BD-1A43-47E40F720C27">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>395773EF-5FBD-5731-F3F2-3DBA19D519D9</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="77B4E21F-A5C1-427B-A722-1EB70B7E6EE3">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>151F812B-073C-D18F-BB64-9E01B869181A</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6B063858-45BA-D6CF-C6BA-A6C82E4DA009" name="genres_id_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>CC187953-1128-ABEE-9A9F-B08FB75E5E7E</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>75BF183D-E4AD-B6BD-1A43-47E40F720C27</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="09B97259-CFD5-E7C7-00DD-11A4E3C4196F" name="genres name UNIQUE">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:15:52 UTC</createdTime>
+<generatorID>B2B7D846-C99A-F0D9-D609-F5603BC2E57F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>77B4E21F-A5C1-427B-A722-1EB70B7E6EE3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

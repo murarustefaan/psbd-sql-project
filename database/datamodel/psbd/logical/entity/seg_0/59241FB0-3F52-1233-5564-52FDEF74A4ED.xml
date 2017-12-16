@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="59241FB0-3F52-1233-5564-52FDEF74A4ED" name="shows">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>6A6AB8FC-EE2B-B7C0-D278-4E8F261CF611</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="8FE0DBB4-E783-F24F-8CEF-F0E641826EE4">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>A34738C2-0A0E-F566-480D-DAAAF670CD24</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="4CC19A4F-8A50-2239-C00E-EAD77BDA5DDD">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>2FBC71ED-6558-401C-47C1-BF0CF38C082E</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="D6598240-38F7-D8D0-FD95-C767338F2A78">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>420D17BD-B8BB-A5EB-E556-49B073B44E16</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5000</dataTypeSize>
+<ownDataTypeParameters>5000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="image url" id="49E52772-F507-895C-AA7C-500ED0565AEA">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>DA08A75A-3AAE-7220-92C7-64AB61C7EB42</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="episode runtime" id="6DDFC57A-BD1A-D84B-DFEE-C876B4372693">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>7A7318F1-74BB-21B8-EC1B-EB3A67B93DC8</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="base id" id="9B1E5D04-C337-6ABE-A67B-1A92BB4FF456">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>43647366-1C4A-BB06-CFF9-7D6807950E2B</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<referedAttribute>C573E4B1-585B-C59E-01C9-DAEDE6F42012</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="825EF50C-70DF-ACDB-3CE0-B4A8F1FCA546" name="shows_id_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>5D46589F-6E8A-B7F7-60C6-E4CF2DF7BBD5</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8FE0DBB4-E783-F24F-8CEF-F0E641826EE4</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="5B51310E-EEC3-D7E0-221C-40D16F42AE4A" name="shows id UNIQUE">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:15:52 UTC</createdTime>
+<generatorID>D10F8C1A-A5DF-C835-8C82-E0D566CF2F1B</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>8FE0DBB4-E783-F24F-8CEF-F0E641826EE4</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="C7AA035D-ED28-0986-1681-D6F8407EEC01" name="shows base id UNIQUE">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:15:52 UTC</createdTime>
+<generatorID>7D4F224D-97D0-09C4-3D18-64F1C5E5C8F3</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>9B1E5D04-C337-6ABE-A67B-1A92BB4FF456</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="psbd" id="401C158D-AEB7-F642-6F31-41AF31BD4C19" version="3.5">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-10 19:33:14 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>401C158D-AEB7-F642-6F31-41AF31BD4C19</designId>
+</OSDM_Design>

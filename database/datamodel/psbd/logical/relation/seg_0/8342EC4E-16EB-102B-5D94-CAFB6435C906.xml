@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="movies base id FK" directorySegmentName="seg_0" id="8342EC4E-16EB-102B-5D94-CAFB6435C906">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>A16F01E0-2ABE-3F0F-4997-02C5AE890D1F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<sourcePk>A95852A6-03F1-A25E-5B5E-168EB1EFF048</sourcePk>
+<targetPk>DAA14662-612B-23B9-51A7-A30589623EA9</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>593846E6-CBE6-B67B-B08A-9B4ED41C8F2D</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>FBE7AB17-134A-CBFC-B24E-3958A264E54B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="shows base id FK" directorySegmentName="seg_0" id="43647366-1C4A-BB06-CFF9-7D6807950E2B">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>7E003547-5DBF-B149-2DDA-A5D38D93AA1A</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<sourcePk>A95852A6-03F1-A25E-5B5E-168EB1EFF048</sourcePk>
+<targetPk>825EF50C-70DF-ACDB-3CE0-B4A8F1FCA546</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>593846E6-CBE6-B67B-B08A-9B4ED41C8F2D</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>59241FB0-3F52-1233-5564-52FDEF74A4ED</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

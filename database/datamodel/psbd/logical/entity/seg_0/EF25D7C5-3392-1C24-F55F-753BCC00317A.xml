@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF25D7C5-3392-1C24-F55F-753BCC00317A" name="base genres">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>655D2F31-7FCD-0881-0562-7A0E4439CB3D</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="base id" id="092DA8E2-EB7A-9EA6-125D-66F746D803BC">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>D3D5B117-FC2C-42BB-2207-5C1827BC251F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<referedAttribute>C573E4B1-585B-C59E-01C9-DAEDE6F42012</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="genres id" id="E1916873-5EF2-2043-1F6A-B11608325653">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>06031A25-37D5-E057-1DBA-46C2706BD01B</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<referedAttribute>75BF183D-E4AD-B6BD-1A43-47E40F720C27</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CA91F699-0280-9945-390D-789BC687FE0A" name="base genres PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>83D0FABB-745D-0F09-CE99-D6981BFC5E27</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>092DA8E2-EB7A-9EA6-125D-66F746D803BC</attributeRef>
+<attributeRef>E1916873-5EF2-2043-1F6A-B11608325653</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="6C17824C-A315-A86F-257D-BD98FAD40EB4" name="base genres UNIQUE">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:17:17 UTC</createdTime>
+<generatorID>FB58650F-49A7-5A84-A843-61B2B37A3555</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>E1916873-5EF2-2043-1F6A-B11608325653</attributeRef>
+<attributeRef>092DA8E2-EB7A-9EA6-125D-66F746D803BC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F33301A2-79CE-13A5-7040-0A537BCA6384" name="genres">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>F4C561A2-484F-830A-8444-0A91B8AF94B5</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="395773EF-5FBD-5731-F3F2-3DBA19D519D9">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>7979A1E7-97A6-450B-3C67-35397538FB9D</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="151F812B-073C-D18F-BB64-9E01B869181A">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>B3CFB1A9-28FE-15F3-51A9-2FCE49F77CCA</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CC187953-1128-ABEE-9A9F-B08FB75E5E7E" name="genres_id_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>2F71E3AF-220B-ADCD-6967-ADDD3DAB70BC</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="395773EF-5FBD-5731-F3F2-3DBA19D519D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2B7D846-C99A-F0D9-D609-F5603BC2E57F" name="genres_name_UNIQUE">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 16:15:11 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="151F812B-073C-D18F-BB64-9E01B869181A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

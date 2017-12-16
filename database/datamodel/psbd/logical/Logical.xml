@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="9473806C-7AB5-EE0D-D8D9-ACB32D79E47E" mainViewID="D1238C34-A359-0CE6-26E1-D782C29A11CA">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-10 19:33:14 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

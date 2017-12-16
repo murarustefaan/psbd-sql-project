@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BE82C036-B9CF-A121-E725-9B0EBC327A6E" containerWithKeyObject="DBB6F61B-DF1F-2688-1326-F134F18B74CF" localFKIndex="BE82EAF7-4756-3093-5A4B-4E26EAB67F8D" name="seasons_show_id_FK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:49 UTC</createdTime>
+<generatorID>FB4C86B2-5787-EDC7-2AFA-DACA55567432</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<referredTableLongName>shows</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>6A6AB8FC-EE2B-B7C0-D278-4E8F261CF611</referredTableID>
+<keyObject>5D46589F-6E8A-B7F7-60C6-E4CF2DF7BBD5</keyObject>
+<referredKeyID>5D46589F-6E8A-B7F7-60C6-E4CF2DF7BBD5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

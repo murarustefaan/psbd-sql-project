@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="5FA3103D-851B-E66E-0E60-9F884D323B1B">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-10 19:33:15 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

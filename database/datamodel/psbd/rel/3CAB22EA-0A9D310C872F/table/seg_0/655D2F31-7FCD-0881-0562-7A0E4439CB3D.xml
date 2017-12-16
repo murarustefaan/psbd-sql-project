@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="655D2F31-7FCD-0881-0562-7A0E4439CB3D" name="base_genres">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="base_id" id="73DAEB24-1101-57F4-2A35-32E6B6EFA71B">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CCBA8FD2-1E8E-FEEE-708B-3D8E7F76BB03" referredColumn="28854D84-8FA6-551D-55DC-C6E913503FE3"/>
+</associations>
+</Column>
+<Column name="genres_id" id="E4020810-9E5C-8B56-ADDD-E3639BDAF3F0">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="25826263-7CAE-19F6-6396-8F38017EAEDC" referredColumn="395773EF-5FBD-5731-F3F2-3DBA19D519D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83D0FABB-745D-0F09-CE99-D6981BFC5E27" name="base_genres_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73DAEB24-1101-57F4-2A35-32E6B6EFA71B"/>
+<colUsage columnID="E4020810-9E5C-8B56-ADDD-E3639BDAF3F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFE5A130-FC43-1159-BB5E-FFF421A4DE56" name="base_genres_base_FK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>866DAA9B-0440-3723-A209-32CD3EFED27F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73DAEB24-1101-57F4-2A35-32E6B6EFA71B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D64E6347-2073-E973-0DF9-42A206CDE34D" name="base_genres_genres_FK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>866DAA9B-0440-3723-A209-32CD3EFED27F</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E4020810-9E5C-8B56-ADDD-E3639BDAF3F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

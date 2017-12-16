@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBB6F61B-DF1F-2688-1326-F134F18B74CF" name="seasons">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>17198A50-8B8B-FDA6-7826-CD1BB73507DC</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F1314B07-DC20-352D-145B-1CDCF1DAB061">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>82163895-AE84-B941-0BFF-1F3BECC524CE</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="number_of_episodes" id="BB41A880-D2BA-1F44-F161-8088FCDDA4EF">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>FAEDA036-1666-E992-116C-62D117D6DF02</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="season_number" id="E9E6C6E3-D5E6-D8DF-15D4-BA4E9943DA6E">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>25DDA9AD-7623-8EF0-9868-566476EF4D59</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="show_id" id="A6F12DCC-3EBF-B335-6875-89A3B2F1C0A9">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>8E98A377-4135-ED26-B645-C5378430D45B</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BE82C036-B9CF-A121-E725-9B0EBC327A6E" referredColumn="A34738C2-0A0E-F566-480D-DAAAF670CD24"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3DF9141-5AF6-363A-CD1A-02992F8A187F" name="seasons_id_PK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:48 UTC</createdTime>
+<generatorID>6730FBD0-1809-99F3-7F20-B6BF050CBAE5</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1314B07-DC20-352D-145B-1CDCF1DAB061"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE82EAF7-4756-3093-5A4B-4E26EAB67F8D" name="seasons_show_id_FK">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:46:49 UTC</createdTime>
+<generatorID>FB4C86B2-5787-EDC7-2AFA-DACA55567432</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6F12DCC-3EBF-B335-6875-89A3B2F1C0A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="base_genres_genres_FK" directorySegmentName="seg_0" id="06031A25-37D5-E057-1DBA-46C2706BD01B">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-16 15:58:43 UTC</createdTime>
+<generatorID>25826263-7CAE-19F6-6396-8F38017EAEDC</generatorID>
+<ownerDesignName>psbd</ownerDesignName>
+<engineerTo>
+<item key="3CAB22EA-44AC-D5FC-F122-0A9D310C872F" value="true"/>
+</engineerTo>
+<sourcePk>6B063858-45BA-D6CF-C6BA-A6C82E4DA009</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>74AC8585-A026-8A59-0EA3-7E9E51AB386F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>EF25D7C5-3392-1C24-F55F-753BCC00317A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

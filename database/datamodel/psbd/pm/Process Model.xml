@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="64B54A52-B5A3-15F9-3857-FD234B069529">
+<createdBy>murar</createdBy>
+<createdTime>2017-12-10 19:33:14 UTC</createdTime>
+<ownerDesignName>psbd</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>
