@@ -25,10 +25,34 @@ class Movie extends Base {
     constructor(id, type, imdbLink, name, length, releaseDate, imageUrl, description) {
         super(id, type, imdbLink);
 
+        /**
+         * @type { String }
+         * @private
+         */
         this.name = name;
+
+        /**
+         * @type { Number }
+         * @private
+         */
         this.length = length;
+
+        /**
+         * @type { Date }
+         * @private
+         */
         this.releaseDate = releaseDate;
+
+        /**
+         * @type { String }
+         * @private
+         */
         this.imageUrl = imageUrl;
+
+        /**
+         * @type { String }
+         * @private
+         */
         this.description = description;
     }
 }
@@ -37,4 +61,4 @@ class Movie extends Base {
  * @typedef { String } BaseType
  */
 
-module.exports = {Movie};
+module.exports = Movie;
