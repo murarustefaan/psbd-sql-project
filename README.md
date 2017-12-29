@@ -25,3 +25,5 @@ Depending on where the database is located (local or remote), it will be necessa
 
 If the build fails with a error that contains `Could not find include file "stddef.h"`, you need to set the npm Visual Studio version by running
   `npm config -g set msvs_version 2013`. Also, make sure that the Visual Studio 2013 installation is included in PATH.
+
+The oracledb package *WILL NOT WORK* with NodeJS 9!

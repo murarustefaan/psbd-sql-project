@@ -6,7 +6,8 @@
   "author": "Muraru Stefan",
   "license": "ISC",
   "dependencies": {
-    "oracledb": "^1.13.1"
+    "instantclient": "^1.0.1",
+    "oracledb": "^2.0.15"
   },
   "devDependencies": {
     "eslint": "^4.12.1",
