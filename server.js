@@ -8,6 +8,7 @@ const oracleConnectParams = DbConfig.createConnectionConfig(
 );
 
 if (!DbConfig.validateConnectionConfig(oracleConnectParams)) {
+    console.error('Invalid oracle configuration');
     process.exit(1);
 }
 

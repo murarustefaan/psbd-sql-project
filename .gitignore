@@ -1,2 +1,6 @@
 node_modules/
 instantclient/
+package-lock.json
+
+#SEGFAULT_HANDLER logs
+crash.log

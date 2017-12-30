@@ -1,12 +1,11 @@
 {
   "name": "psbd.tiiime",
-  "version": "0.1",
+  "version": "1.0.0",
   "description": "College project for PSBD (Oracle Databases)",
   "main": "server.js",
   "author": "Muraru Stefan",
   "license": "ISC",
   "dependencies": {
-    "instantclient": "^1.0.1",
     "oracledb": "^2.0.15"
   },
   "devDependencies": {
