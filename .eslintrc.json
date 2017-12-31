@@ -7,7 +7,8 @@
         "node": true
     },
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 8
     },
     "rules": {
         "no-const-assign": "error",
@@ -17,6 +18,7 @@
         "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
-        "max-len": ["error", 120]
+        "max-len": ["error", 120],
+        "new-cap": 0
     }
 }

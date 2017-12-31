@@ -1,5 +1,8 @@
-const Oracle = require('oracledb');
 const DbConfig = require('./config/database');
+const ConnectionFactory = require('./database/connectionFactory');
+
+const Express = require('express');
+const ExpressRouter = Express.Router();
 
 const oracleConnectParams = DbConfig.createConnectionConfig(
     DbConfig.getDbConnectionString(),
@@ -15,3 +18,22 @@ if (!DbConfig.validateConnectionConfig(oracleConnectParams)) {
 console.info(`Database connection string: ${oracleConnectParams.connectString}`);
 console.info(`Database connection username: ${oracleConnectParams.user}`);
 console.info(`Database connection password: ${oracleConnectParams.password}`);
+
+console.info('Creating Oracle connection pool...');
+ConnectionFactory.createConnectionPool(oracleConnectParams)
+    .then(
+        async (connectionPool) => {
+            console.info('Oracle connection pool created successfully.');
+
+            const connection = await ConnectionFactory.getConnection(connectionPool);
+            const data = await connection.execute(`SELECT * FROM TEST`);
+
+            console.log(data.rows);
+
+            await ConnectionFactory.closeConnection(connection);
+            await ConnectionFactory.closeConnectionPool(connectionPool);
+        },
+        (error) => {
+            console.error(error);
+        }
+    );

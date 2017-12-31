@@ -6,6 +6,7 @@
   "author": "Muraru Stefan",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
     "oracledb": "^2.0.15"
   },
   "devDependencies": {
