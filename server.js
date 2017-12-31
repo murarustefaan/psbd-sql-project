@@ -2,7 +2,9 @@ const DbConfig = require('./config/database');
 const ConnectionFactory = require('./database/connectionFactory');
 
 const Express = require('express');
-const ExpressRouter = Express.Router();
+const server = Express();
+
+const BodyParser = require('body-parser');
 
 const oracleConnectParams = DbConfig.createConnectionConfig(
     DbConfig.getDbConnectionString(),
@@ -25,13 +27,16 @@ ConnectionFactory.createConnectionPool(oracleConnectParams)
         async (connectionPool) => {
             console.info('Oracle connection pool created successfully.');
 
-            const connection = await ConnectionFactory.getConnection(connectionPool);
-            const data = await connection.execute(`SELECT * FROM TEST`);
+            // Initialize Body-Parser
+            server.use(BodyParser.json());
+            server.use(BodyParser.urlencoded({extended: false}));
 
-            console.log(data.rows);
+            // Initialize api routes
+            server.use('/api/movie', require('./api/movie')(connectionPool));
 
-            await ConnectionFactory.closeConnection(connection);
-            await ConnectionFactory.closeConnectionPool(connectionPool);
+            server.listen(process.env.PSBD_SERVER_PORT, () => {
+                console.log(`Server started...`);
+            });
         },
         (error) => {
             console.error(error);
