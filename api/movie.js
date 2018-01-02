@@ -5,14 +5,23 @@
  */
 
 const Router = require('express').Router();
+const OracleDb = require('oracledb');
+const ToCamelcase = require('camelcase');
+const ConnectionFactory = require('../database/connectionFactory');
+const Movie = require('../models/movie');
+const BaseTypes = require('../models/base').BaseTypes;
+
+let connectionPool = null;
 
 /**
  * Handle movie routes
  *
- * @param { IConnectionPool } connectionPool
+ * @param { IConnectionPool } _connectionPool
  * @return { Router }
  */
-const MovieRouter = (connectionPool) => {
+const MovieRouter = (_connectionPool) => {
+    connectionPool = _connectionPool;
+
     Router
         .get('/:base_id', getMovieDetails)
         .get('/:base_id/runtime', getMovieRuntime)
@@ -29,11 +38,58 @@ const MovieRouter = (connectionPool) => {
  * @param { Response } res
  * @return { Promise }
  */
-const getMovieDetails = (req, res) => {
-    return res.json({
-        id: req.params.base_id,
-        op: 'GET-DETAILS',
-    });
+const getMovieDetails = async (req, res) => {
+    if (isNaN(Number(req.params.base_id))) {
+        return res.json({
+            op: 'GET-DETAILS',
+            error: 'The base_id parameter must only contain numeric characters',
+        });
+    }
+
+    let responseBody = null;
+    try {
+        const oracleConnection = await connectionPool.getConnection();
+
+        const bindVars = {
+            base_id: req.params.base_id,
+            cursor: {dir: OracleDb.BIND_OUT, type: OracleDb.CURSOR},
+        };
+        const resultSet = await oracleConnection.execute(`
+            BEGIN :cursor := GET_MOVIE_DETAILS(:base_id); END;
+        `, bindVars);
+
+        const cursor = resultSet.outBinds.cursor;
+        const _dbMovies = await getCursorObjects(cursor);
+        const movies = [];
+        for (const _dbMovie of _dbMovies) {
+            movies.push(new Movie(
+                _dbMovie.baseId,
+                _dbMovie.imdbLink,
+                _dbMovie.name,
+                _dbMovie.length,
+                _dbMovie.releaseDate,
+                _dbMovie.imageUrl,
+                _dbMovie.description
+            ));
+        }
+
+        await resultSet.outBinds.cursor.close();
+        await ConnectionFactory.closeConnection(oracleConnection);
+
+        responseBody = {
+            op: 'GET-DETAILS',
+            id: req.params.base_id,
+            data: movies,
+        };
+    } catch (e) {
+        console.error(e.message);
+        responseBody = {
+            op: 'GET-DETAILS',
+            error: e.message,
+        };
+    }
+
+    return res.json(responseBody);
 };
 
 /**
@@ -77,6 +133,38 @@ const deleteMovie = (req, res) => {
         id: req.params.base_id,
         op: 'DELETE',
     });
+};
+
+/**
+ * Retrieve data from an open cursor
+ *
+ * @param { IResultSet } cursor
+ * @return { Array<Object> } The data retrieved from the specific cursor
+ */
+const getCursorObjects = async (cursor) => {
+    const keys = cursor.metaData;
+    const objects = [];
+    let obj = null;
+
+    do {
+        obj = (await cursor.getRow()) || null;
+        if (obj !== null) {
+            const normalizedObject = {};
+
+            // Due to how OracleDB driver gets values from the database, we need to
+            // create an object from 2 arrays, one containing keys, the other one values.
+            obj.forEach((prop, index) => {
+                const keyName = keys[index].name;
+                const key = ToCamelcase(keyName);
+
+                normalizedObject[key] = prop;
+            });
+
+            objects.push(normalizedObject);
+        }
+    } while (obj !== null);
+
+    return objects;
 };
 
 module.exports = MovieRouter;

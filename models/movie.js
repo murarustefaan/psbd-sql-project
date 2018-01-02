@@ -2,6 +2,7 @@
  * @module Movie
  */
 const Base = require('./base').Base;
+const BaseTypes = require('./base').BaseTypes;
 
 /**
  * Movie class.
@@ -13,7 +14,6 @@ class Movie extends Base {
     /**
      * Creates an instance of Movie.
      * @param { !Number } id            Id of entity (Base).
-     * @param { !BaseType } type        The type of entity (Base).
      * @param { !String } imdbLink      Unique IMDB link.
      * @param { !String } name          Name of the movie.
      * @param { !Number } length        Length of the movie (in minutes).
@@ -22,8 +22,8 @@ class Movie extends Base {
      * @param { String= } description   IMDB or other third-party description.
      * @memberof Movie
      */
-    constructor(id, type, imdbLink, name, length, releaseDate, imageUrl, description) {
-        super(id, type, imdbLink);
+    constructor(id, imdbLink, name, length, releaseDate, imageUrl, description) {
+        super(id, BaseTypes.MOVIE, imdbLink);
 
         /**
          * @type { String }
