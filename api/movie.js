@@ -99,11 +99,44 @@ const getMovieDetails = async (req, res) => {
  * @param { Response } res
  * @return { Promise }
  */
-const getMovieRuntime = (req, res) => {
-    return res.json({
-        id: req.params.base_id,
-        op: 'GET-RUNTIME',
-    });
+const getMovieRuntime = async (req, res) => {
+    if (isNaN(Number(req.params.base_id))) {
+        return res.json({
+            op: 'GET-RUNTIME',
+            error: 'The base_id parameter must only contain numeric characters',
+        });
+    }
+
+    let responseBody = null;
+    try {
+        const oracleConnection = await connectionPool.getConnection();
+
+        const bindVars = {
+            base_id: req.params.base_id,
+            runtime: {dir: OracleDb.BIND_OUT, type: OracleDb.NUMBER},
+        };
+        const result = await oracleConnection.execute(`
+            BEGIN :runtime := GET_MOVIE_RUNTIME(:base_id); END;
+        `, bindVars);
+
+        const runtime = result.outBinds.runtime;
+
+        await ConnectionFactory.closeConnection(oracleConnection);
+
+        responseBody = {
+            op: 'GET-RUNTIME',
+            id: req.params.base_id,
+            runtime,
+        };
+    } catch (e) {
+        console.error(e.message);
+        responseBody = {
+            op: 'GET-RUNTIME',
+            error: e.message,
+        };
+    }
+
+    return res.json(responseBody);
 };
 
 /**
