@@ -147,11 +147,75 @@ const getMovieRuntime = async (req, res) => {
  * @param { Response } res
  * @return { Promise }
  */
-const createOrUpdateMovie = (req, res) => {
-    return res.json({
-        name: req.body.name,
-        op: 'CREATE-OR-UPDATE',
-    });
+const createOrUpdateMovie = async (req, res) => {
+    if (isPostInvalidBody(req.body)) {
+        return res.json({
+            op: 'CREATE-OR-UDPATE',
+            error: 'Invalid body parameters',
+        });
+    }
+
+    let responseBody = null;
+    try {
+        const oracleConnection = await connectionPool.getConnection();
+
+        const bindVars = {
+            base_id: req.body.baseId,
+            imdb_link: req.body.imdbLink,
+            name: req.body.name,
+            description: req.body.description,
+            image_url: req.body.imageUrl,
+            length: req.body.length,
+            release_date: new Date(req.body.releaseDate),
+            new_id: {dir: OracleDb.BIND_OUT, type: OracleDb.NUMBER},
+        };
+        const result = await oracleConnection.execute(`
+            BEGIN
+                CREATE_OR_UPDATE_MOVIE(
+                    :base_id, :imdb_link, :name, :description, :image_url, :length, :release_date, :new_id
+                );
+                COMMIT;
+            END;
+        `, bindVars);
+
+        await ConnectionFactory.closeConnection(oracleConnection);
+
+        responseBody = {
+            op: 'CREATE-OR-UPDATE',
+            id: result.outBinds.new_id || undefined,
+            data: req.body,
+        };
+    } catch (e) {
+        console.error(e.message);
+        responseBody = {
+            op: 'CREATE-OR-UPDATE',
+            error: e.message,
+        };
+    }
+
+    return res.json(responseBody);
+};
+
+/**
+ * Test if request body is valid or not for a CREATE-OR-UPDATE-MOVIE action.
+ *
+ * @param { Object }            reqBody
+ * @param { String | Number }   reqBody.baseId
+ * @param { String }            reqBody.imdbLink
+ * @param { String }            reqBody.name
+ * @param { String }            reqBody.description
+ * @param { String }            reqBody.imageUrl
+ * @param { String | Number }   reqBody.length
+ * @param { String | Date }     reqBody.releaseDate
+ * @return { Boolean }
+ */
+const isPostInvalidBody = (reqBody) => {
+    return !reqBody.imdbLink ||
+        !reqBody.name ||
+        !reqBody.description ||
+        !reqBody.imageUrl ||
+        !reqBody.length ||
+        !reqBody.releaseDate;
 };
 
 /**
@@ -161,11 +225,45 @@ const createOrUpdateMovie = (req, res) => {
  * @param { Response } res
  * @return { Promise }
  */
-const deleteMovie = (req, res) => {
-    return res.json({
-        id: req.params.base_id,
-        op: 'DELETE',
-    });
+const deleteMovie = async (req, res) => {
+    if (!req.params.base_id ||
+        isNaN(Number(req.params.base_id))) {
+        return res.json({
+            op: 'DELETE',
+            error: 'The base_id parameter must only contain numeric characters',
+        });
+    }
+
+    let responseBody = null;
+    try {
+        const oracleConnection = await connectionPool.getConnection();
+
+        const bindVars = {
+            base_id: req.params.base_id,
+            ret_id: {dir: OracleDb.BIND_OUT, type: OracleDb.NUMBER},
+        };
+        const result = await oracleConnection.execute(`
+            BEGIN
+                DELETE_MOVIE_BY_BASE_ID(:base_id, :ret_id);
+                COMMIT;
+            END;
+        `, bindVars);
+
+        await ConnectionFactory.closeConnection(oracleConnection);
+
+        responseBody = {
+            op: 'DELETE',
+            data: result.outBinds.ret_id,
+        };
+    } catch (e) {
+        console.error(e.message);
+        responseBody = {
+            op: 'DELETE',
+            error: e.message,
+        };
+    }
+
+    return res.json(responseBody);
 };
 
 /**

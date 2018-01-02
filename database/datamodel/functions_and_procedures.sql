@@ -39,3 +39,55 @@ BEGIN
 
   RETURN v_runtime;
 END;
+
+------------------------------
+-- CREATE OR UPDATE A MOVIE --
+CREATE OR REPLACE PROCEDURE CREATE_OR_UPDATE_MOVIE (
+  V_BASE_ID       NUMBER,
+  V_IMDB_LINK     VARCHAR,
+  V_NAME          VARCHAR,
+  V_DESCRIPTION   VARCHAR,
+  V_IMAGE_URL     VARCHAR,
+  V_LENGTH        NUMBER,
+  V_RELEASE_DATE  DATE,
+  V_RET_ID        OUT NUMBER
+) AS
+  V_MOVIE_EXISTS  NUMBER;
+BEGIN
+  SELECT 
+    CASE WHEN COUNT(base_id) > 0 THEN 1 ELSE 0 END INTO V_MOVIE_EXISTS
+  FROM MOVIES
+  WHERE base_id = V_BASE_ID;
+  
+  IF V_MOVIE_EXISTS = 1 THEN
+    UPDATE MOVIES SET
+      name = V_NAME,
+      description = V_DESCRIPTION,
+      image_url = V_IMAGE_URL,
+      length = V_LENGTH,
+      release_date = V_RELEASE_DATE
+    WHERE base_id = V_BASE_ID;
+    
+    UPDATE BASE SET
+      imdb_link = V_IMDB_LINK
+    WHERE id = V_BASE_ID;  
+  ELSE
+    INSERT INTO BASE (type, imdb_link)
+      VALUES ('movie', V_IMDB_LINK)
+      RETURNING id INTO V_RET_ID;
+    INSERT INTO MOVIES (name, length, release_date, image_url, description, base_id)
+      VALUES (V_NAME, V_LENGTH, V_RELEASE_DATE, V_IMAGE_URL, V_DESCRIPTION, V_RET_ID);
+  END IF;
+END CREATE_OR_UPDATE_MOVIE;
+
+-------------------------------------------------------
+-- DELETE MOVIE AND BASE ENTRIES FOR A GIVEN BASE_ID --  
+CREATE OR REPLACE PROCEDURE DELETE_MOVIE_BY_BASE_ID (
+  V_BASE_ID   IN NUMBER,
+  V_RET_ID    OUT NUMBER
+) AS
+BEGIN
+  DELETE FROM MOVIES WHERE base_id = V_BASE_ID;
+  DELETE FROM BASE WHERE id = V_BASE_ID
+    RETURNING id INTO V_RET_ID;
+END;
