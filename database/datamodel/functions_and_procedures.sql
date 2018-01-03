@@ -91,3 +91,22 @@ BEGIN
   DELETE FROM BASE WHERE id = V_BASE_ID
     RETURNING id INTO V_RET_ID;
 END;
+
+------------------------------------------------------------------------
+-- SEARCH THE MOVIES AND SHOWS TABLES FOR A RECORDS WITH A GIVEN NAME --
+CREATE OR REPLACE
+FUNCTION SEARCH_BY_NAME (
+  V_NAME IN VARCHAR
+) RETURN SYS_REFCURSOR
+AS
+  rc_search SYS_REFCURSOR;
+BEGIN
+  OPEN rc_search FOR
+    SELECT base_id, type, name, image_url FROM (
+      SELECT base_id, type, name, image_url FROM SHOWS JOIN BASE ON SHOWS.base_id = BASE.id 
+      UNION 
+      SELECT base_id, type, name, image_url FROM MOVIES JOIN BASE ON MOVIES.base_id = BASE.id 
+    )
+    WHERE LOWER(NAME) LIKE '%'|| LOWER(V_NAME) || '%';
+  RETURN rc_search;  
+END;

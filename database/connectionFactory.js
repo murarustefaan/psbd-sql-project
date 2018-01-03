@@ -72,6 +72,22 @@ const ConnectionFactory = {
             return false;
         }
     },
+
+    /**
+     * Close a existing result set
+     *
+     * @param { IResultSet } resultSet
+     * @return { Boolean }
+     */
+    closeResultSet: async (resultSet) => {
+        try {
+            await resultSet.close();
+            return true;
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+    },
 };
 
 /**

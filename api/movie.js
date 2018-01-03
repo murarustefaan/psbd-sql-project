@@ -6,10 +6,9 @@
 
 const Router = require('express').Router();
 const OracleDb = require('oracledb');
-const ToCamelcase = require('camelcase');
 const ConnectionFactory = require('../database/connectionFactory');
 const Movie = require('../models/movie');
-const BaseTypes = require('../models/base').BaseTypes;
+const OperationsHelper = require('../database/operationsHelper');
 
 let connectionPool = null;
 
@@ -52,14 +51,14 @@ const getMovieDetails = async (req, res) => {
 
         const bindVars = {
             base_id: req.params.base_id,
-            cursor: {dir: OracleDb.BIND_OUT, type: OracleDb.CURSOR},
+            rs: {dir: OracleDb.BIND_OUT, type: OracleDb.CURSOR},
         };
-        const resultSet = await oracleConnection.execute(`
-            BEGIN :cursor := GET_MOVIE_DETAILS(:base_id); END;
+        const results = await oracleConnection.execute(`
+            BEGIN :rs := GET_MOVIE_DETAILS(:base_id); END;
         `, bindVars);
 
-        const cursor = resultSet.outBinds.cursor;
-        const _dbMovies = await getCursorObjects(cursor);
+        const resultSet = results.outBinds.rs;
+        const _dbMovies = await OperationsHelper.getObjectsFromResultSet(resultSet);
         const movies = [];
         for (const _dbMovie of _dbMovies) {
             movies.push(new Movie(
@@ -73,7 +72,7 @@ const getMovieDetails = async (req, res) => {
             ));
         }
 
-        await resultSet.outBinds.cursor.close();
+        await ConnectionFactory.closeResultSet(resultSet);
         await ConnectionFactory.closeConnection(oracleConnection);
 
         responseBody = {
@@ -264,38 +263,6 @@ const deleteMovie = async (req, res) => {
     }
 
     return res.json(responseBody);
-};
-
-/**
- * Retrieve data from an open cursor
- *
- * @param { IResultSet } cursor
- * @return { Array<Object> } The data retrieved from the specific cursor
- */
-const getCursorObjects = async (cursor) => {
-    const keys = cursor.metaData;
-    const objects = [];
-    let obj = null;
-
-    do {
-        obj = (await cursor.getRow()) || null;
-        if (obj !== null) {
-            const normalizedObject = {};
-
-            // Due to how OracleDB driver gets values from the database, we need to
-            // create an object from 2 arrays, one containing keys, the other one values.
-            obj.forEach((prop, index) => {
-                const keyName = keys[index].name;
-                const key = ToCamelcase(keyName);
-
-                normalizedObject[key] = prop;
-            });
-
-            objects.push(normalizedObject);
-        }
-    } while (obj !== null);
-
-    return objects;
 };
 
 module.exports = MovieRouter;
