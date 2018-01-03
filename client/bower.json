@@ -6,6 +6,22 @@
   ],
   "description": "College project for PSBD (Oracle Databases)",
   "main": "index.js",
+  "install": {
+    "path": {
+      "css": "lib/css",
+      "js": "lib/js"
+    },
+    "sources": {
+      "bootstrap": [
+        "lib/bootstrap/dist/css/bootstrap.min.*",
+        "lib/bootstrap/dist/css/bootstrap-grid.min.*",
+        "lib/bootstrap/dist/js/bootstrap.bundle.min.*"
+      ]
+    }
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-beta.3"
+  },
   "keywords": [
     "college",
     "project",

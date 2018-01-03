@@ -1,0 +1,13 @@
+h1#title{
+    margin: 80px 0 0 30px;
+    text-align: center;
+}
+
+div#main-content {
+    width: 50%;
+    margin: 3% 25%;
+}
+
+div#main-content > table > thead > tr > th {
+    text-align: center;
+}
