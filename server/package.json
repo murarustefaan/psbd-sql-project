@@ -1,6 +1,7 @@
 {
-  "name": "psbd.tiiime",
+  "name": "psbd.tiiime.server",
   "version": "1.0.0",
+  "homepage": "https://github.com/mayaro/PSBD.Tiiime",
   "description": "College project for PSBD (Oracle Databases)",
   "main": "server.js",
   "author": "Muraru Stefan",

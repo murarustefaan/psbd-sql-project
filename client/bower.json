@@ -1,0 +1,20 @@
+{
+  "name": "psbd.tiiime.client",
+  "homepage": "https://github.com/mayaro/PSBD.Tiiime",
+  "authors": [
+    "Muraru Stefan <muraru.stefaan@gmail.com>"
+  ],
+  "description": "College project for PSBD (Oracle Databases)",
+  "main": "index.js",
+  "keywords": [
+    "college",
+    "project",
+    "databases",
+    "angular",
+    "4",
+    "oracle",
+    "node"
+  ],
+  "license": "ISC",
+  "private": true
+}
