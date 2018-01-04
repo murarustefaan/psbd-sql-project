@@ -3,6 +3,7 @@ const ConnectionFactory = require('./database/connectionFactory');
 
 const Express = require('express');
 const server = Express();
+const Cors = require('cors');
 
 const BodyParser = require('body-parser');
 
@@ -30,6 +31,7 @@ ConnectionFactory.createConnectionPool(oracleConnectParams)
             // Initialize Body-Parser
             server.use(BodyParser.json());
             server.use(BodyParser.urlencoded({extended: false}));
+            server.use(Cors());
 
             // Initialize api routes
             server.use('/api/movie', require('./api/movie')(connectionPool));
