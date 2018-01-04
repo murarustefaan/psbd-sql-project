@@ -21,7 +21,8 @@ const SearchRouter = (_connectionPool) => {
     connectionPool = _connectionPool;
 
     Router
-        .get('/', doSearch);
+        .get('/', searchByName)
+        .get('/all', getAll);
 
     return Router;
 };
@@ -33,7 +34,7 @@ const SearchRouter = (_connectionPool) => {
  * @param { Response } res
  * @return { Promise }
  */
-const doSearch = async (req, res) => {
+const searchByName = async (req, res) => {
     if (!req.query.name ||
         !req.query.name.length) {
         return res.json({
@@ -70,6 +71,51 @@ const doSearch = async (req, res) => {
         console.error(e.message);
         responseBody = {
             op: 'SEARCH',
+            error: e.message,
+        };
+    }
+
+    return res.json(responseBody);
+};
+
+/**
+ * Search movies and show by limit.
+ * Missing limit query parameter will default to a maximum of 5 records to be extracted.
+ *
+ * @param { Request } req
+ * @param { Response } res
+ * @return { Promise }
+ */
+const getAll = async (req, res) => {
+    const limit = req.query.limit || 5;
+
+    let responseBody = null;
+    try {
+        const oracleConnection = await connectionPool.getConnection();
+
+        const bindVars = {
+            rs: {dir: OracleDb.BIND_OUT, type: OracleDb.CURSOR},
+        };
+        const results = await oracleConnection.execute(`
+            BEGIN :rs := GET_ALL(); END;
+        `, bindVars);
+
+        const resultSet = results.outBinds.rs;
+
+        const dbEntities = await OperationsHelper.getObjectsFromResultSet(resultSet, limit);
+
+        await ConnectionFactory.closeResultSet(resultSet);
+        await ConnectionFactory.closeConnection(oracleConnection);
+
+        responseBody = {
+            op: 'GET-ALL',
+            name: req.query.name,
+            data: dbEntities,
+        };
+    } catch (e) {
+        console.error(e.message);
+        responseBody = {
+            op: 'GET-ALL',
             error: e.message,
         };
     }

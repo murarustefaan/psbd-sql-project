@@ -8,12 +8,15 @@ const ToCamelcase = require('camelcase');
 
 const OperationsHelper = {
     /**
-     * Retrieve data from an open cursor
+     * Retrieve data from an open cursor.
+     * The second parameter will be used to limit the number of records extracted from a cursor.
+     * If missing, all records available will be extracted.
      *
      * @param { IResultSet } cursor
+     * @param { Number } [limit]
      * @return { Array<Object> } The data retrieved from the specific cursor
      */
-    getObjectsFromResultSet: async (cursor) => {
+    getObjectsFromResultSet: async (cursor, limit) => {
         const keys = cursor.metaData;
         const objects = [];
         let obj = null;
@@ -34,7 +37,7 @@ const OperationsHelper = {
 
                 objects.push(normalizedObject);
             }
-        } while (obj !== null);
+        } while (obj !== null && (!limit || objects.length < limit));
 
         return objects;
     },

@@ -110,3 +110,21 @@ BEGIN
     WHERE LOWER(NAME) LIKE '%'|| LOWER(V_NAME) || '%';
   RETURN rc_search;  
 END;
+
+-----------------------
+-- GET ALL BUT LIMIT --
+CREATE OR REPLACE 
+FUNCTION GET_ALL
+RETURN SYS_REFCURSOR
+AS
+  rc_search SYS_REFCURSOR;
+BEGIN
+  OPEN rc_search FOR
+    SELECT base_id, type, name, image_url FROM (
+      SELECT base_id, type, name, image_url FROM SHOWS JOIN BASE ON SHOWS.base_id = BASE.id 
+      UNION 
+      SELECT base_id, type, name, image_url FROM MOVIES JOIN BASE ON MOVIES.base_id = BASE.id 
+    )
+    ORDER BY base_id ASC;
+  RETURN rc_search;  
+END;
