@@ -1,34 +1,48 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="tiiime" ng-controller="appController as App">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="lib/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="style/style.css">
-    <title>PSBD.Tiiime</title>
+    <base href="/">
+    <title ng-bind="App.title"></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!--Vendor stylesheets-->
+    <link rel="stylesheet" href="assets/vendor/css/angular-material.css">
+    <link rel="stylesheet" href="assets/vendor/icons/style.css">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-    <h1 id="title">PSBD.Tiiime</h1>
+<body ng-cloak>
+    <md-toolbar md-whiteframe="2dp">
+        <div class="md-toolbar-tools">
+            <h2 md-truncate flex>{{ App.title }}</h2>
 
-    <div id="main-content">
-        <div id="preload"></div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">BASE</th>
-                    <th scope="col">NAME</th>
-                    <th scope="col">TYPE</th>
-                    <th scope="col">EDIT</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </content> 
+            <md-button ui-sref="alter">
+                CRUD
+            </md-button>
+        </div>
+    </md-toolbar>
 
-    <script type="module">
-        import initializeView from './scripts/index.js';
+    <div ui-view></div>
 
-        initializeView();
-    </script>
+    <span class="background" ng-style="{'background-image': 'url({{App.backgroundUrl}})'}"></span>
+
+    <!--Vendor scripts-->
+    <script src="assets/vendor/js/jquery.min.js"></script>
+    <script src="assets/vendor/js/angular.js"></script>
+    <script src="assets/vendor/js/angular-aria.js"></script>
+    <script src="assets/vendor/js/angular-animate.js"></script>
+    <script src="assets/vendor/js/angular-material.js"></script>
+    <script src="assets/vendor/js/angular-messages.min.js"></script>
+    <script src="assets/vendor/js/angular-ui-router.min.js"></script>
+
+    <!--Custom scripts-->
+    <script src="assets/app.js"></script>
+    <script src="assets/services/timeService.js"></script>
+    <script src="assets/services/alterService.js"></script>
+    <script src="assets/controllers/appController.js"></script>
+    <script src="assets/controllers/alterController.js"></script>
 </body>
 </html>

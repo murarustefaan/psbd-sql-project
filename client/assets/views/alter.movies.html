@@ -1,0 +1,57 @@
+<md-content layout-padding>
+        <form name="movieAlterForm" layout="column">
+            <div layout="row">
+                <md-input-container>
+                    <label>Title *</label>
+                    <md-autocomplete id="alter-title-input"
+                                     md-selected-item="AC.currentMovie"
+                                     md-selected-item-change="AC.updateSelectedItemInfo()"
+                                     md-search-text="AC.givenTitle"
+                                     md-items="item in AC.getMatches(AC.givenTitle, 'movie')"
+                                     md-item-text="item.name"
+                                     placeholder="Title"
+                                     md-delay="600"
+                                     class="md-input"
+                                     md-no-cache="true">
+                        <md-item-template>
+                            <span md-highlight-text="AC.givenTitle">{{item.name}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            <h2 class="md-headline">No matches found.</h2>
+                        </md-not-found>
+                    </md-autocomplete>
+                </md-input-container>
+                <md-input-container>
+                    <label>IMDB Link *</label>
+                    <input type="text" ng-model="AC.currentMovie.imdbLink">
+                </md-input-container>
+                <span flex></span>
+                <md-input-container>
+                    <label>Length *</label>
+                    <input type="text" ng-model="AC.currentMovie.length">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-xs="row">
+                <md-input-container>
+                    <label>Release date *</label>
+                    <md-datepicker ng-model="AC.currentMovie.releaseDate"></md-datepicker>
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Description</label>
+                <textarea ng-model="AC.currentMovie.description" md-maxlength="1000" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+
+            <div layout-gt-xs="row">
+                <md-input-container class="md-block">
+                    <md-button ng-click="AC.alter()">Alter</md-button>
+                </md-input-container>
+                <span flex></span>
+                <md-input-container>
+                    <md-button ng-click="AC.deleteEntry()" class="md-warn">Delete</md-button>
+                </md-input-container>
+            </div>
+        </form>
+</md-content>

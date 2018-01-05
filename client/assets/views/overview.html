@@ -1,0 +1,37 @@
+<div class="movie-info-duration" layout="row" layout-align="center center">
+    <h1 flex="80">{{App.totalRuntime ? App.totalRuntimeLabel : "&nbsp"}}</h1>
+</div>
+<div layout="row" layout-align="center center" class="watching-label">
+    <h2 flex="60"> {{ App.watchingLabel ? App.watchingLabel : "&nbsp" }} </h2>
+</div>
+
+<style>
+    .md-virtual-repeat-container.md-autocomplete-suggestions-container {
+        background: transparent;
+        box-shadow: none;
+    }
+</style>
+
+<div class="title-container" layout="row" layout-align="center center">
+    <md-autocomplete flex="70"
+                     id="title-input"
+                     md-selected-item="App.foundMovie"
+                     md-search-text="App.searchText"
+                     md-items="item in App.getMatches(App.searchText)"
+                     md-item-text="item.name"
+                     md-menu-class="autocomplete-dropdown"
+                     placeholder="Type-in a MOVIE or SHOW"
+                     md-selected-item-change="App.addNewEntry(App.foundMovie)"
+                     md-delay="600">
+        <md-item-template>
+            <div  layout="row" layout-align="center center" class="md-headline vertical-align">
+                <div class="vertical-align" md-highlight-text="App.searchText" flex="100">
+                    {{item.name}} ( {{item.type === 'show' ? 'TV Show' : 'Movie'}} )
+                </div>
+            </div>
+        </md-item-template>
+        <md-not-found>
+            <h2 class="md-headline">No matches found.</h2>
+        </md-not-found>
+    </md-autocomplete>
+</div>

@@ -33,7 +33,7 @@ class Base {
          * @type { !String }
          * @private
          */
-        this.imdb_link = imdbLink;
+        this.imdbLink = imdbLink;
     }
 }
 
