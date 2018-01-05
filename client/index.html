@@ -11,10 +11,11 @@
     <h1 id="title">PSBD.Tiiime</h1>
 
     <div id="main-content">
+        <div id="preload"></div>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">BASE_ID</th>
+                    <th scope="col">BASE</th>
                     <th scope="col">NAME</th>
                     <th scope="col">TYPE</th>
                 </tr>
@@ -23,6 +24,10 @@
         </table>
     </content> 
 
-    <script src="/lib/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import initializeView from './scripts/index.js';
+
+        initializeView();
+    </script>
 </body>
 </html>

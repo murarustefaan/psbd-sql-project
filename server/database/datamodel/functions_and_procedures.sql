@@ -120,10 +120,10 @@ AS
   rc_search SYS_REFCURSOR;
 BEGIN
   OPEN rc_search FOR
-    SELECT base_id, type, name, image_url FROM (
-      SELECT base_id, type, name, image_url FROM SHOWS JOIN BASE ON SHOWS.base_id = BASE.id 
+    SELECT base_id, name, type FROM (
+      SELECT base_id, name, type FROM SHOWS JOIN BASE ON SHOWS.base_id = BASE.id 
       UNION 
-      SELECT base_id, type, name, image_url FROM MOVIES JOIN BASE ON MOVIES.base_id = BASE.id 
+      SELECT base_id, name, type FROM MOVIES JOIN BASE ON MOVIES.base_id = BASE.id 
     )
     ORDER BY base_id ASC;
   RETURN rc_search;  

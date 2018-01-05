@@ -8,6 +8,7 @@ div#main-content {
     margin: 3% 25%;
 }
 
-div#main-content > table > thead > tr > th {
+div#main-content > table > thead > tr > th,
+div#main-content > table > tbody > tr > td {
     text-align: center;
 }
