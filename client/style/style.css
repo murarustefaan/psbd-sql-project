@@ -12,3 +12,8 @@ div#main-content > table > thead > tr > th,
 div#main-content > table > tbody > tr > td {
     text-align: center;
 }
+
+div#main-content > table > tbody > tr > td > img {
+    width: 21px;
+    height: 21px;
+}

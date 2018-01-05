@@ -3,6 +3,8 @@ import ApiHelper from "./api.js";
 const tableQuerySelector = 'div#main-content > table.table > tbody';
 const tableElement = document.querySelector(tableQuerySelector);
 
+const editImageSrc = './images/edit.png';
+
 /**
  * Initialize the table on the main view.
  */
@@ -37,5 +39,26 @@ const buildTableEntry = (record) => {
         row.appendChild(cell);
     }
 
+    const editCell = document.createElement('td');
+    const img = document.createElement('img');
+    img.src = editImageSrc;
+    editCell.appendChild(img);
+    row.appendChild(editCell);
+
     return row;
+};
+
+/**
+ * Append the edit button to a table row
+ * 
+ * @param { HTMLTableRowElement } row 
+ */
+const appendEditButton = (row) => {
+    const editCell = document.createElement('td');
+    const img = document.createElement('img');
+    
+    img.src = editImageSrc;
+
+    editCell.appendChild(img);
+    row.appendChild(editCell);
 };
