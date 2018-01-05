@@ -18,6 +18,14 @@ Depending on where the database is located (local or remote), it will be necessa
 
   `npm install`
 
+Also, the server gets the username, password and connection string for the database from environment variables, so be sure to have the following set:
+
+  `PSBD_ORA_USER`, `PSBD_ORA_PASS`, `PSBD_ORA_CONN_STRING`
+  
+  and for the server to start on localhost,
+
+  `PSBD_SERVER_PORT`.
+
 If the install succeeds but the application fails silently, make sure that you have the Oracle Instant Client location set in PATH. Also, make sure that the Visual Studio 2013 installation is included in PATH.
 
 The oracledb package *WILL NOT WORK* with NodeJS 9!
