@@ -1,7 +1,7 @@
 /**
  * @module Show
  */
-const Base = require('./base').Base;
+const {Base, BaseTypes} = require('./base');
 
 /**
  * Show class
@@ -14,7 +14,6 @@ class Show extends Base {
      * Creates an instance of Show.
      *
      * @param { !Number } id            Id of entity (Base).
-     * @param { !BaseType } type        The type of entity (Base).
      * @param { !String } imdbLink      Unique IMDB link.
      * @param { !String } name          Name of the TV Show.
      * @param { String= } description   IMDB of other third party description.
@@ -22,8 +21,8 @@ class Show extends Base {
      * @param { !Number } episodeRuntime      The runtime of a singe episode.
      * @memberof Show
      */
-    constructor(id, type, imdbLink, name, description, imageUrl, episodeRuntime) {
-        super(id, type, imdbLink);
+    constructor(id, imdbLink, name, description, imageUrl, episodeRuntime) {
+        super(id, BaseTypes.SHOW, imdbLink);
 
         /**
          * @type { String }
@@ -48,6 +47,16 @@ class Show extends Base {
          * @private
          */
         this.episodeRuntime = episodeRuntime;
+    }
+
+    /**
+     * seasons property setter
+     *
+     * @param { Array<Object> } seasons
+     * @memberof Show
+     */
+    set seasons(seasons) {
+        this.seasons = seasons;
     }
 }
 

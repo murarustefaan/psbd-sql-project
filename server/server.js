@@ -36,6 +36,7 @@ ConnectionFactory.createConnectionPool(oracleConnectParams)
             // Initialize api routes
             server.use('/api/movie', require('./api/movie')(connectionPool));
             server.use('/api/search', require('./api/search')(connectionPool));
+            server.use('/api/show', require('./api/show')(connectionPool));
 
             server.listen(process.env.PSBD_SERVER_PORT, () => {
                 console.log(`Server started...`);
