@@ -4,6 +4,7 @@ package-lock.json
 client/lib/*
 !client/lib/js
 !client/lib/css
+Documentatie*
 
 #SEGFAULT_HANDLER logs
 crash.log

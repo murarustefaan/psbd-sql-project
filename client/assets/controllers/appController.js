@@ -96,7 +96,10 @@ function appControllerFn(timeService) {
 
             }
 
-            const backgroundUrl = entry.image_url ? `http://image.tmdb.org/t/p/original${entry.image_url}` : self.backgroundUrl;
+            const backgroundUrl = (entry.imageUrl && 
+                isValidUrl(entry.imageUrl)) ?
+                    entry.imageUrl :
+                    self.backgroundUrl;
             angular.element(`span.background`)[0].style.backgroundImage = `url("${backgroundUrl}")`;
 
         }
@@ -110,3 +113,15 @@ function appControllerFn(timeService) {
     }
 
 }
+
+/**
+ * Test whether a string is a correct URL format
+ * 
+ * @param { String } str 
+ * @return { Boolean } 
+ */
+const isValidUrl = (str) => {
+    const a  = document.createElement('a');
+    a.href = str;
+    return (a.host && a.host != window.location.host);
+};
